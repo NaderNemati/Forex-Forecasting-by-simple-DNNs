@@ -1,6 +1,6 @@
 # Forex-Forecasting-by-simple-DNNs
 Machine learning algorithms have been used to predict future OHLC prices. The previous findings suggest that machine learning algorithms can predict future OHLC prices properly and affect price forecasts. We utilized FLF and Mean Square Error as loss functions, and developed a deep neural network model using Convolutional Neural Net-
-works by incorporating multiple time frames into the training process to reduce loss value between actual and predicted prices in the compression with simple GRU, LSTM, and CNN models. 
+works by incorporating multiple time frames into the training process to reduce loss value between actual and predicted prices in the compression with simple GRU, LSTM, and CNN models. This repository contains implementations of deep neural networks based on each data sequence of size 70 to predict 71st. During my research, I compared these models to my suggested model.
 
 # Long-short Term Memory (LSTM)
 The total input to an LSTM [12] unit is comprised of the current input from the previous layer and the recurrent input from the previous time step. LSTM units are comprised of three different parts of forget, input, and output gates. The forget gate is responsible for keeping or removing currently existing information on the cell state memory according the total input. Then the input gate extract new information from the total input and add the important information that is most probably required
