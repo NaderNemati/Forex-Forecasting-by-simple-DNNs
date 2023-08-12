@@ -1,11 +1,47 @@
-# Forex-Forecasting-by-simple-DNNs
-Machine learning algorithms have proven to be effective in predicting future OHLC prices. Previous research findings demonstrate the accuracy of machine learning algorithms in forecasting OHLC prices, thereby influencing price predictions. In our study, we employed FLF and Mean Square Error as loss functions and developed a deep neural network model using Convolutional Neural Networks. By incorporating multiple time frames into the training process, we aimed to minimize the disparity between actual and predicted prices. To achieve this, we compared the performance of our suggested model with other baseline models, including simple GRU, LSTM, and CNN models. This repository encompasses the implementation of deep neural networks, with each data sequence of size 70 being utilized to predict the 71st.
+# Forex Forecasting with Deep Neural Networks
 
-# Long-short Term Memory (LSTM)
-The input to an LSTM consists of two components: the current input from the previous layer and the recurrent input from the previous time step. LSTM units are composed of three distinct parts: the forget gate, input gate, and output gate. The forget gate determines whether to retain or discard existing information in the cell state memory based on the total input. The input gate extracts new information from the total input and adds important information to the cell state memory, which is likely to be useful in future time steps. Finally, the output gate calculates the output from the cell state memory, taking into account the total input. This output is then transmitted to the next layer and also fed back to the LSTM unit itself through the recurrent connection.
+This repository hosts an exploration into the realm of Forex price forecasting using deep neural networks. Machine learning algorithms have demonstrated their efficacy in predicting future OHLC (Open, High, Low, Close) prices, offering valuable insights for price prediction. Our study centers around a deep neural network model, leveraging Convolutional Neural Networks (CNNs) and incorporating multiple time frames to minimize disparities between actual and predicted prices.
 
-# Gated Recurrent Unit (GRU)
-When comparing GRU to LSTM, it is evident that GRU offers a more simplified structure and algorithm. While LSTM incorporates three gates, GRU utilizes only two. Despite sharing the input and forget gates with LSTM, GRU's lack of an output gate results in fewer parameters. Instead, GRU combines the forget gate and input gate, as well as the cell state and hidden state, into a single gate called the update gate and the rest gate, respectively. The update gate plays a crucial role in transferring relevant information from previous steps to future ones, while the rest gate handles the management of long-short term memory, determining whether to retain or discard information from the total inputs.
+## Motivation and Methodology
 
-# Convolutional Neural Network
-Convolutional neural networks (CNNs) are commonly employed for solving visual tasks involving 2D and 3D data, such as image classification, object detection, and image segmentation. Additionally, one-dimensional convolutions can be effectively utilized for sequential data and time series analysis. CNN architectures consist of a series of interconnected convolutional and pooling layers, followed by fully-connected layers. The convolutional layers apply multiple filter kernels to the input signal, enabling the detection of informative local features. Subsequently, pooling layers employ subsampling operations, typically using maximum kernels, to reduce local redundancies and enhance the network's resilience to data variations. As the signal passes through these layers, the complexity of extracted features progressively increases, with higher convolutional layers identifying discriminative patterns that are well-suited for the final classification or regression performed by the fully-connected layers.
+In our research, we adopt the use of FLF (Fill Limit Forecasting) and Mean Square Error as loss functions to train our deep neural network model. By harnessing the power of Convolutional Neural Networks, we seek to capture intricate patterns within Forex price data. Our model's architecture is carefully designed to consider multiple time frames, enriching its understanding of the underlying trends.
+
+## Model Architectures Explored
+
+### Long Short-Term Memory (LSTM)
+
+The LSTM, a well-established architecture, processes input through three gates: forget, input, and output. These gates collectively determine the flow of information, allowing the LSTM to capture both short-term and long-term dependencies. The LSTM's recurrent connections facilitate the retention of essential information over sequential time steps.
+
+### Gated Recurrent Unit (GRU)
+
+In contrast to LSTM, the GRU offers a simplified structure by combining forget and input gates into an update gate and a reset gate. This streamlined design reduces parameter complexity while effectively managing long-short term memory. The GRU's ability to retain pertinent information while discarding noise enhances its performance in sequential data analysis.
+
+### Convolutional Neural Network (CNN)
+
+Originally designed for image analysis, CNNs have been adapted for sequential data analysis, including time series forecasting. The architecture's convolutional and pooling layers progressively extract intricate features, culminating in fully-connected layers for classification or regression. One-dimensional convolutions enable effective processing of sequential data, facilitating pattern recognition in Forex price trends.
+
+## Repository Contents
+
+- `data/`: Preprocessed and normalized EURUSD dataset, along with train-validation-test splits.
+- `notebooks/`: Jupyter notebooks detailing model implementations, experimentation, and results.
+- `models/`: Saved model checkpoints and configurations for reproducibility.
+- `results/`: Quantitative and qualitative findings, including performance metrics and visualizations.
+- `src/`: Source code for data preprocessing, model architecture, training, and evaluation.
+
+## Usage
+
+To replicate our experiments and delve into the details of our models, refer to the Jupyter notebooks in the `notebooks/` directory. These notebooks provide step-by-step walkthroughs of data preprocessing, model construction, training, and evaluation.
+
+## Citation
+
+If you find this work valuable for your research or projects, kindly consider citing:
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+For inquiries or collaborations, please reach out to [Your Name](mailto:your.email@example.com).
+
